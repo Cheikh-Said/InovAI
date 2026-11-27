@@ -32,6 +32,8 @@
 
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
+body.links-open { overflow: hidden; }
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -199,6 +201,15 @@ body {
 
 .links-area[hidden] { display: none; }
 
+.links-area,
+.links-area .links {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.links-area::-webkit-scrollbar,
+.links-area .links::-webkit-scrollbar { display: none; }
+
 .links-area .links {
   width: min(100%, 420px);
   overflow: visible;
@@ -214,8 +225,8 @@ body {
 
 .org-logo {
   flex: 0 0 auto;
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   aspect-ratio: 1 / 1;
 }
@@ -455,7 +466,9 @@ body {
 
 @media (max-width: 480px) {
   .org-header { gap: 10px; }
-  .org-logo { width: 40px; height: 40px; }
+  .org-logo { width: 60px; height: 60px; }
+  .org-text { font-size: 0.6rem; line-height: 1.45; }
+  .club-logo { width: min(68vw, 180px); }
 }
 
 @media (min-width: 600px) {

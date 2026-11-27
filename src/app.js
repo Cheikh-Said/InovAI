@@ -1,6 +1,3 @@
-/* ==================================================================
-   InovAI Club — edit your links here
-   ================================================================== */
 
 const PROFILE = {
   name: "InovAI"
@@ -114,6 +111,7 @@ function initJoinButton() {
   function setOpen(open) {
     area.hidden = !open;
     shell.classList.toggle("is-open", open);
+    document.body.classList.toggle("links-open", open);
     button.setAttribute("aria-expanded", String(open));
 
     if (open) {

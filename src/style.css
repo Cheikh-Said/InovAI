@@ -158,8 +158,11 @@ body {
 }
 
 .hero,
-.footer {
-  transition: filter 0.45s var(--ease), opacity 0.45s var(--ease), transform 0.45s var(--ease);
+.footer,
+.logo-wrap,
+.name,
+.join-btn {
+  transition: filter 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 /* When the links are open, push everything else out of focus */
@@ -191,15 +194,26 @@ body {
   inset: 0;
   z-index: 30;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 24px;
   background: rgba(0, 33, 74, 0.22);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
 }
 
 .links-area[hidden] { display: none; }
+
+.links-area:not([hidden]) { animation: overlay-in 0.18s ease-out; }
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.links-area.is-closing {
+  animation: overlay-in 0.18s ease-out reverse forwards;
+  pointer-events: none;
+}
 
 .links-area,
 .links-area .links {
@@ -352,8 +366,8 @@ body {
   overflow: hidden;
   opacity: 0;
   transform: translateY(14px) scale(0.985);
-  animation: link-in 0.6s var(--ease) forwards;
-  animation-delay: calc(var(--i, 0) * 80ms + 80ms);
+  animation: link-in 0.3s ease-out forwards;
+  animation-delay: calc(var(--i, 0) * 40ms + 20ms);
   transition: transform 0.32s var(--ease);
 }
 

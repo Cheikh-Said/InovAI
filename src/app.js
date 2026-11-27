@@ -107,9 +107,26 @@ function initJoinButton() {
   const links = document.getElementById("links");
   const area = document.getElementById("linksArea");
   const shell = document.querySelector(".shell");
+  let closeTimer;
 
   function setOpen(open) {
-    area.hidden = !open;
+    window.clearTimeout(closeTimer);
+
+    if (open) {
+      area.hidden = false;
+      area.classList.remove("is-closing");
+    } else if (!area.hidden) {
+      // Restart the animation so the reverse fade actually plays
+      area.style.animation = "none";
+      void area.offsetWidth;
+      area.style.animation = "";
+      area.classList.add("is-closing");
+      closeTimer = window.setTimeout(() => {
+        area.hidden = true;
+        area.classList.remove("is-closing");
+      }, 180);
+    }
+
     shell.classList.toggle("is-open", open);
     document.body.classList.toggle("links-open", open);
     button.setAttribute("aria-expanded", String(open));
@@ -123,11 +140,11 @@ function initJoinButton() {
     }
   }
 
-  button.addEventListener("click", () => setOpen(area.hidden));
+  button.addEventListener("click", () => setOpen(!shell.classList.contains("is-open")));
 
   // Click anywhere outside the links closes them and restores the page
   document.addEventListener("click", (event) => {
-    if (area.hidden) return;
+    if (!shell.classList.contains("is-open")) return;
     if (links.contains(event.target) || button.contains(event.target)) return;
     setOpen(false);
   });

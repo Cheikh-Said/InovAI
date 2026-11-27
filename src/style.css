@@ -201,8 +201,7 @@ body {
 
 .links-area .links {
   width: min(100%, 420px);
-  max-height: calc(100dvh - 48px);
-  overflow-y: auto;
+  overflow: visible;
 }
 
 .org-header {
@@ -381,8 +380,6 @@ body {
   place-items: center;
   width: 42px;
   height: 42px;
-  border-radius: 13px;
-  background: rgba(var(--brand-rgb), var(--brand-soft-alpha));
   color: rgb(var(--brand-rgb));
   transition: transform 0.35s var(--ease);
 }
@@ -393,7 +390,6 @@ body {
 .link:focus-visible .link-icon {
   transform: rotate(-7deg) scale(1.08);
   color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.2);
 }
 
 .link:hover .link-title,

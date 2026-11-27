@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="InovAI Club — join our community." />
+  <meta name="theme-color" content="#04376C" />
+  <title>InovAI Club</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+
+  <!-- Decorative background -->
+  <div class="bg-art" aria-hidden="true">
+    <span class="blob blob-one"></span>
+    <span class="blob blob-two"></span>
+    <span class="dots"></span>
+  </div>
+
+  <main class="page">
+    <div class="shell">
+
+      <!-- {header} -->
+      <header class="hero reveal">
+        <div class="org-header">
+          <img class="org-logo" src="asset/univ.png" alt="University Kasdi Merbah Ouargla"
+               width="64" height="64" />
+          <p class="org-text">Faculty of New Technologies of Information and Communication<br />
+            University Kasdi Merbah Ouargla</p>
+          <img class="org-logo" src="asset/fac logo.png"
+               alt="Faculty of New Technologies of Information and Communication"
+               width="64" height="64" />
+        </div>
+      </header>
+
+      <!-- {div} — logo, name, button -->
+      <div class="center-block reveal">
+        <div class="logo-wrap">
+          <img class="club-logo" src="asset/logo_transparent.png" alt="InovAI Club logo"
+               width="220" height="131" />
+        </div>
+
+        <h1 class="name"><span class="name-inov">Inov</span><span class="name-ai">AI</span></h1>
+
+        <button class="join-btn" id="joinBtn" type="button"
+                aria-expanded="false" aria-controls="links">
+          <span id="joinLabel">JOIN TO US</span>
+        </button>
+      </div>
+
+      <!-- {links} — separate div -->
+      <div class="links-area" id="linksArea" hidden>
+        <nav class="links" id="links" aria-label="InovAI links"></nav>
+      </div>
+
+      <footer class="footer reveal">
+        <span class="footer-mark" aria-hidden="true"></span>
+        <span>club created on 2026</span>
+        <span class="footer-mark" aria-hidden="true"></span>
+      </footer>
+
+    </div>
+  </main>
+
+  <script src="src/app.js"></script>
+</body>
+</html>
